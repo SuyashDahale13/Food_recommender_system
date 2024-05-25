@@ -22,4 +22,15 @@ A hybrid recommender system is a type of recommendation system that combines mul
 There are two main types of collaborative filtering:
 1. User-User Collaborative Filtering: Finds users with similar preferences and recommends items they have liked.
 2. Item-Item Collaborative Filtering: Recommends items that are similar to items the user has liked in the past.
-- I opted for User-User Collaborative Filtering
+- I opted for User-User Collaborative Filtering and took only those users who rated more than 150 recipes and only those recipes which got more than 50 ratings.
+
+#### Popularity Based Recommender System :
+- Filtered the top 50 recipes from the dataset to show them upfront when user open the application ( for futer update ).
+- Currently using it as substitute of collabrative filtering for those recipes which are in content based filtering but not in collaborative filtering.
+
+## Used Libraries
+- Pandas
+- Numpy
+- Scikit-learn
+- Streamlit
+
