@@ -25,7 +25,7 @@ There are two main types of collaborative filtering:
 - I opted for User-User Collaborative Filtering and took only those users who rated more than 150 recipes and only those recipes which got more than 50 ratings.
 
 #### Popularity Based Recommender System :
-- Filtered the top 50 recipes from the dataset to show them upfront when user open the application ( for futer update ).
+- Filtered the top 50 recipes from the dataset to show them upfront when user open the application ( for futuer update ).
 - Currently using it as substitute of collabrative filtering for those recipes which are in content based filtering but not in collaborative filtering.
 
 ## Used Libraries
