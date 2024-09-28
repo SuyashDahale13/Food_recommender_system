@@ -1,0 +1,39 @@
+{% load static %}
+{% include 'base.html' %}
+<link rel="stylesheet" href="/static/css/home_page.css">
+
+<div class="main-container">
+  <main class="left-content">
+      <div class="section-header">
+          <h1>Top Recipes</h1>
+      </div>
+      <div class="scrollable-content">
+          <div class="recipe-grid">
+              {% for recipe in top_recipes %}
+              <div class="recipe-card">
+                  <img src="/static/images/raw-data-images/{{recipe.recipe_id}}.jpg" alt="{{ recipe.recipe_name }}">
+                  <div class="recipe-card-content">
+                      <h3>{{ recipe.recipe_name }}</h3>
+                      <a href="{% url "details_page" recipe.recipe_id %}" class="btn">Details</a>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+  </main>
+
+  <aside class="right-sidebar">
+      <div class="section-header">
+          <h2>All Recipes</h2>
+      </div>
+      <div class="scrollable-content">
+          <div class="all-recipes">
+              <ul>
+                  {% for recipe in all_recipes %}
+                  <li><a href="{% url "details_page" recipe.recipe_id %}"> {{ recipe.recipe_name }}</a></li>
+                  {% endfor %}
+              </ul>
+          </div>
+      </div>
+  </aside>
+</div>

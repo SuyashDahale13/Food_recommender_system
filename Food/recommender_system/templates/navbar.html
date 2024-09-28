@@ -1,0 +1,21 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url "home_page" %}" >YmmFood</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- Your menu items can go here -->
+        </ul>
+        <form class="d-flex justify-content-center mx-auto" style="width: 50%;">
+          <input class="form-control me-2" name = "q" type="search" placeholder="Search For More Recipes" aria-label="Search" style="width: 70%;">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="ms-auto">
+          <img src="{% static '/images/food.png' %}" alt="Food Icon" height="80">
+        </div>
+      </div>
+    </div>
+  </nav>

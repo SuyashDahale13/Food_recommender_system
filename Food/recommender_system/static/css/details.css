@@ -1,0 +1,258 @@
+.main-container {
+  display: flex;
+  height: calc(100vh - 60px);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.left-content, .right-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-content {
+  flex: 3;
+  background-color: #b7413e;
+}
+
+.right-sidebar {
+  flex: 1;
+  background-color: #f9e4b7;
+}
+
+.section-header {
+  padding: 20px;
+  background-color: inherit;
+  z-index: 10;
+}
+
+.scrollable-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0 20px 20px;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.recipe-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-card-content {
+  padding: 15px;
+}
+
+.recipe-card h3 {
+  margin: 0 0 10px 0;
+}
+
+.recipe-card .btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.all-recipes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.all-recipes li {
+  margin-bottom: 10px;
+}
+.btn{
+  flex: content;
+}
+
+
+.recipe-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.recipe-card h3 {
+  margin: 0 0 10px 0;
+}
+
+.recipe-card .btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  /* align-self: flex-end; */
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+
+.left-content {
+  background-color: #f8f9fa;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.right-sidebar {
+  background-color: #e9ecef;
+  background-image: 
+    radial-gradient(circle, #d6d8db 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.ingredients {
+  flex: 2; 
+}
+
+.ingredients-nutrition {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.ingredients, .instructions {
+  background-color: #fff; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+  border: 1px solid #ddd; 
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-table thead th {
+  background-color: #fff; 
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  border-bottom: 2px solid #ddd; 
+}
+
+
+.nutrition-table th, .nutrition-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.nutrition-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.nutrition-table tr:last-child td {
+  border-bottom: none;
+}
+
+.nutrition-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.nutrition-table tr:hover {
+  background-color: #e9ecef;
+}
+
+
+.recipe-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top-section {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start; 
+}
+
+.top-section, .bottom-section {
+  display: flex;
+  gap: 20px;
+}
+
+.recipe-image-container, .ingredients, .nutrition, .instructions {
+  flex: 1;
+  min-width: 250px;
+}
+
+.recipe-image-container {
+  position: relative;
+  width: 100%; 
+  padding-top: 37.5%;
+  overflow: hidden;
+}
+
+.recipe-image-container {
+  flex: 1;
+}
+
+.recipe-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+
+@media (max-width: 768px) {
+  .top-section, .bottom-section {
+      flex-direction: column;
+  }
+  
+  .recipe-image-container {
+      padding-top: 56.25%;
+  }
+}

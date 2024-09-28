@@ -1,0 +1,95 @@
+{% load static %}
+{% include 'base.html' %}
+<link rel="stylesheet" href="{% static '/css/details.css' %}">
+<div class="main-container">
+    <main class="left-content">
+        <div class="section-header">
+            {% for r in recipe %}
+                <h1>{{r.recipe_name}}</h1>
+        </div>
+        <div class="scrollable-content">
+            <div class="recipe-details">
+                <div class="top-section">
+                    <div class="recipe-image-container">
+                        <img src="/static/images/raw-data-images/{{r.recipe_id}}.jpg" alt="{{ r.recipe_name }}">
+                    </div>
+                    <div class="ingredients">
+                        <h2>Ingredients</h2>
+                        <ul>
+                            {% for ingredient in r.ingredients %}
+                                <li>{{ ingredient }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom-section">
+                    <div class="nutrition">
+                        {% comment %} <h2>Nutrition Facts</h2> {% endcomment %}
+                        <table class="nutrition-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Nutrition Facts</th>
+                            </tr>
+                        </thead>
+                          <tr>
+                            <th>Nutrient</th>
+                            <th>Value</th>
+                          </tr>
+                          <tr>
+                              <td>Calories</td>
+                              <td>{{r.calories}}</td>
+                          </tr>
+                          <tr>
+                              <td>Fat</td>
+                              <td>{{r.fat}}</td>
+                          </tr>
+                          <tr>
+                              <td>Carbohydrates</td>
+                              <td>{{r.carbohydrates}}</td>
+                          </tr>
+                          <tr>
+                              <td>Protein</td>
+                              <td>{{r.protein}}</td>
+                          </tr>
+                          <tr>
+                              <td>Cholesterol</td>
+                              <td>{{r.cholestrol}}</td>
+                          </tr>
+                          <tr>
+                              <td>Sodium</td>
+                              <td>{{r.sodium}}</td>
+                          </tr>
+                          <tr>
+                              <td>Fiber</td>
+                              <td>{{r.fiber}}</td>
+                          </tr>
+                        </table>
+                    </div>
+                    <div class="instructions">
+                        <h2>Instructions</h2>
+                        <p>{{ r.instructions }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <aside class="right-sidebar">
+      <div class="section-header">
+          <h2>Similar Recipes</h2>
+      </div>
+      <div class="scrollable-content">
+        <div class="recipe-grid">
+            {% for same in similar %}
+            <div class="recipe-card">
+                <img src="/static/images/raw-data-images/{{same.recipe_id}}.jpg" alt="{{ same.recipe_name }}">
+                <div class="recipe-card-content">
+                    <h3>{{ same.recipe_name }}</h3>
+                    <a href="{% url "details_page" same.recipe_id %}" class="btn">Details</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </aside>
+</div>
