@@ -1,8 +1,9 @@
-# Recipe Recommender System">
+# Recipe Recommender System"
 
 
 
 This is a **Recipe Recommender System** that suggests food recepies based on user preferences. The system uses machine learning techniques to recommend food items tailored to users' taste profiles and dietary habits.
+_
 <img width="1440" alt="Screenshot 2024-09-28 at 9 17 39 AM" src="https://github.com/user-attachments/assets/3b84845b-7afa-4e4d-8fcb-2f58f4af5e1c">
 <img width="1440" alt="Screenshot 2024-09-28 at 9 18 04 AM" src="https://github.com/user-attachments/assets/8aaa0c36-00d3-4f7c-9db8-1dff168a6946">
 
