@@ -1,14 +1,19 @@
-Certainly! Below is an example `README.md` file for your **Food Recommender System** project. It outlines the purpose, setup instructions, and usage. You can customize it further as per your needs.
+# Recipe Recommender System">
 
----
 
-# Food Recommender System
 
-This is a **Food Recommender System** that suggests food items based on user preferences. The system uses machine learning techniques to recommend food items tailored to users' taste profiles and dietary habits.
+This is a **Recipe Recommender System** that suggests food recepies based on user preferences. The system uses machine learning techniques to recommend food items tailored to users' taste profiles and dietary habits.
+<img width="1440" alt="Screenshot 2024-09-28 at 9 17 39 AM" src="https://github.com/user-attachments/assets/3b84845b-7afa-4e4d-8fcb-2f58f4af5e1c">
+<img width="1440" alt="Screenshot 2024-09-28 at 9 18 04 AM" src="https://github.com/user-attachments/assets/8aaa0c36-00d3-4f7c-9db8-1dff168a6946">
+
+
+## Used Dataset - https://www.kaggle.com/datasets/elisaxxygao/foodrecsysv1
 
 ## Features
-
+- Content-Based Recommendations (Used ingredients and nutirions as base for content-based filtering. Used Word2vec technique to convert ingredients into vector form.)
+- Popularity Based Recommendations (Filtered the top 50 recipes from the dataset to show them upfront when user open the application.)
 - Machine learning-based recommendation algorithms.
+![Screenshot from 2024-05-25 13-31-09](https://github.com/SuyashDahale13/Food_Recommender_System/assets/138577127/7a52b266-4a86-40b4-8cb6-dfc6d7c72822)
 
 ## Table of Contents
 - [Installation](#installation)
@@ -46,33 +51,39 @@ Before setting up the project, ensure you have the following installed:
    ```bash
    pip install -r requirements.txt
    ```
+4. **Copy Images :**
+   Download the [dataset](https://www.kaggle.com/datasets/elisaxxygao/foodrecsysv1) and move "raw-data-images" folder into static folder (inside recommender_system folder)
 
-4. **Setup the database (if applicable):**
-   If your system uses a database, you can set it up as follows:
+5. **Setup the database (if applicable):**
+   I have used postgresql with [pgvector](https://github.com/pgvector/pgvector) extension to store vectors.
+   check my [food.ipynb](https://github.com/SuyashDahale13/Recipe_Recommender_System/blob/Version_1.1/food.ipynb)
    ```bash
    python manage.py migrate
    ```
-
-5. **Run the development server:**
+5. **Collect static files:**
+   ```bash
+   pthon manage.py collectstatic
+   ```
+6. **Run the development server:**
    Start the Django development server to run the application locally:
    ```bash
    python manage.py runserver
    ```
 
-6. **Access the app:**
+7. **Access the app:**
    Open your web browser and navigate to `http://127.0.0.1:8000/` to access the Food Recommender System.
 
 ## Usage
-1. **Sign Up / Log In**: Users can sign up or log in to their account to access personalized recommendations.
-2. **Input Preferences**: Users can input their dietary preferences (e.g., vegetarian, gluten-free).
-3. **Get Recommendations**: Based on user preferences and history, the system will recommend food items.
-4. **Explore Restaurants**: Users can explore restaurants or food outlets based on the recommended items.
+1. User can pick recipe from top recipes.
+2. User can check the nutritions values and recipe instructions on "Details" page.
+3. User can search recipe from searchbar.
+4. User can check all the available recipes in available in database.
 
 ## Technologies Used
 - **Backend**: Django (Python framework)
-- **Frontend**: HTML, CSS, JavaScript
-- **Database**: SQLite (default for Django)
-- **Machine Learning**: Scikit-learn (or any ML library used for food recommendation)
+- **Frontend**: HTML, CSS
+- **Database**: Postgresql + pgvector
+- **Machine Learning**: Scikit-learn, vector database, word2vec
 
 ## Contributing
 We welcome contributions to improve the Food Recommender System! To contribute:
@@ -86,8 +97,7 @@ We welcome contributions to improve the Food Recommender System! To contribute:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For any questions or suggestions, please reach out at [your-email@example.com](mailto:your-email@example.com).
+For any questions or suggestions, please reach out at [your-email@example.com](mailto:suyashdahaleatwork@gmail.com).
 
 ---
 
-Feel free to modify this template as needed for your project. Let me know if you need further adjustments or details!
